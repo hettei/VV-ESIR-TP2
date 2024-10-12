@@ -1,4 +1,4 @@
-class Group {
+public class Group {
 
     private int weight;
     private String name;
@@ -16,6 +16,23 @@ class Group {
 
     public void draw() {
         Screen.rectangle(color, name);
+    }
+
+    public String getName() { 
+        return this.name; 
+    }
+    
+    public void doIt(){
+        if(true){
+            draw();
+        }else{
+            draw();
+        }
+        if(false){
+            draw();
+        }else{
+            draw();
+        }
     }
 
 }

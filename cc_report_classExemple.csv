@@ -1,0 +1,5 @@
+Class;Method;CC
+Group;public int compareTo(Group other);1
+Group;public void draw();1
+Group;public String getName();1
+Group;public void doIt();3

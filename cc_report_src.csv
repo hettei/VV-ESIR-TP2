@@ -1,0 +1,685 @@
+Class;Method;CC
+AlreadySelectedException;public Option getOption();1
+AlreadySelectedException;public OptionGroup getOptionGroup();1
+AmbiguousOptionException;private static String createMessage(final String option, final Collection<String> matchingOptions);3
+AmbiguousOptionException;public Collection<String> getMatchingOptions();1
+BasicParser;protected String[] flatten(@SuppressWarnings("unused") final Options options, final String[] arguments, @SuppressWarnings("unused") final boolean stopAtNonOption);1
+CommandLine;public static Builder builder();1
+CommandLine;protected void addArg(final String arg);2
+CommandLine;protected void addOption(final Option opt);2
+CommandLine;private T get(final Supplier<T> supplier);1
+CommandLine;public List<String> getArgList();1
+CommandLine;public String[] getArgs();1
+CommandLine;public Object getOptionObject(final char opt);1
+CommandLine;public Object getOptionObject(final String opt);1
+CommandLine;public Properties getOptionProperties(final Option option);2
+CommandLine;public Properties getOptionProperties(final String opt);2
+CommandLine;public Option[] getOptions();1
+CommandLine;public String getOptionValue(final char opt);1
+CommandLine;public String getOptionValue(final char opt, final String defaultValue);1
+CommandLine;public String getOptionValue(final char opt, final Supplier<String> defaultValue);1
+CommandLine;public String getOptionValue(final Option option);1
+CommandLine;public String getOptionValue(final Option option, final String defaultValue);1
+CommandLine;public String getOptionValue(final Option option, final Supplier<String> defaultValue);1
+CommandLine;public String getOptionValue(final OptionGroup optionGroup);1
+CommandLine;public String getOptionValue(final OptionGroup optionGroup, final String defaultValue);1
+CommandLine;public String getOptionValue(final OptionGroup optionGroup, final Supplier<String> defaultValue);1
+CommandLine;public String getOptionValue(final String opt);1
+CommandLine;public String getOptionValue(final String opt, final String defaultValue);1
+CommandLine;public String getOptionValue(final String opt, final Supplier<String> defaultValue);1
+CommandLine;public String[] getOptionValues(final char opt);1
+CommandLine;public String[] getOptionValues(final Option option);4
+CommandLine;public String[] getOptionValues(final OptionGroup optionGroup);2
+CommandLine;public String[] getOptionValues(final String opt);1
+CommandLine;public T getParsedOptionValue(final char opt) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final char opt, final Supplier<T> defaultValue) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final char opt, final T defaultValue) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final Option option) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final Option option, final Supplier<T> defaultValue) throws ParseException;3
+CommandLine;public T getParsedOptionValue(final Option option, final T defaultValue) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final OptionGroup optionGroup) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final OptionGroup optionGroup, final Supplier<T> defaultValue) throws ParseException;2
+CommandLine;public T getParsedOptionValue(final OptionGroup optionGroup, final T defaultValue) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final String opt) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final String opt, final Supplier<T> defaultValue) throws ParseException;1
+CommandLine;public T getParsedOptionValue(final String opt, final T defaultValue) throws ParseException;1
+CommandLine;private void handleDeprecated(final Option option);2
+CommandLine;public boolean hasOption(final char opt);1
+CommandLine;public boolean hasOption(final Option opt);2
+CommandLine;public boolean hasOption(final OptionGroup optionGroup);2
+CommandLine;public boolean hasOption(final String opt);1
+CommandLine;public Iterator<Option> iterator();1
+CommandLine;private void processPropertiesFromValues(final Properties props, final List<String> values);3
+CommandLine;private Option resolveOption(final String opt);3
+CommandLineParser; CommandLine parse(Options options, String[] arguments) throws ParseException;1
+CommandLineParser; CommandLine parse(Options options, String[] arguments, boolean stopAtNonOption) throws ParseException;1
+Converter; T apply(String string) throws E;1
+DefaultParser;public static Builder builder();1
+DefaultParser; static int indexOfEqual(final String token);1
+DefaultParser;private void checkRequiredArgs() throws ParseException;3
+DefaultParser;protected void checkRequiredOptions() throws MissingOptionException;2
+DefaultParser;private String getLongPrefix(final String token);3
+DefaultParser;private List<String> getMatchingLongOptions(final String token);3
+DefaultParser;protected void handleConcatenatedOptions(final String token) throws ParseException;4
+DefaultParser;private void handleLongOption(final String token) throws ParseException;2
+DefaultParser;private void handleLongOptionWithEqual(final String token) throws ParseException;4
+DefaultParser;private void handleLongOptionWithoutEqual(final String token) throws ParseException;3
+DefaultParser;private void handleOption(final Option option) throws ParseException;1
+DefaultParser;private void handleProperties(final Properties properties) throws ParseException;8
+DefaultParser;private void handleShortAndLongOption(final String hyphenToken) throws ParseException;11
+DefaultParser;private void handleToken(final String token) throws ParseException;8
+DefaultParser;private void handleUnknownToken(final String token) throws ParseException;3
+DefaultParser;private boolean isArgument(final String token);1
+DefaultParser;private boolean isJavaProperty(final String token);1
+DefaultParser;private boolean isLongOption(final String token);4
+DefaultParser;private boolean isNegativeNumber(final String token);1
+DefaultParser;private boolean isOption(final String token);1
+DefaultParser;private boolean isShortOption(final String token);3
+DefaultParser;public CommandLine parse(final Options options, final String[] arguments) throws ParseException;1
+DefaultParser;public CommandLine parse(final Options options, final String[] arguments, final boolean stopAtNonOption) throws ParseException;1
+DefaultParser;public CommandLine parse(final Options options, final String[] arguments, final Properties properties) throws ParseException;1
+DefaultParser;public CommandLine parse(final Options options, final String[] arguments, final Properties properties, final boolean stopAtNonOption) throws ParseException;2
+DefaultParser;private String stripLeadingAndTrailingQuotesDefaultOff(final String token);2
+DefaultParser;private String stripLeadingAndTrailingQuotesDefaultOn(final String token);2
+DefaultParser;private void updateRequiredOptions(final Option option) throws AlreadySelectedException;4
+DeprecatedAttributes;public static Builder builder();1
+DeprecatedAttributes;public String getDescription();1
+DeprecatedAttributes;public String getSince();1
+DeprecatedAttributes;public boolean isForRemoval();1
+DeprecatedAttributes;private String toEmpty(final String since);1
+DeprecatedAttributes;public String toString();4
+GnuParser;protected String[] flatten(final Options options, final String[] arguments, final boolean stopAtNonOption);11
+HelpFormatter;public static Builder builder();1
+HelpFormatter;private static PrintWriter createDefaultPrintWriter();1
+HelpFormatter;public static String getDescription(final Option option);1
+HelpFormatter;private void appendOption(final StringBuilder buff, final Option option, final boolean required);5
+HelpFormatter;private void appendOptionGroup(final StringBuilder buff, final OptionGroup group);6
+HelpFormatter; A appendOptions(final A sb, final int width, final Options options, final int leftPad, final int descPad) throws IOException;13
+HelpFormatter; A appendWrappedText(final A appendable, final int width, final int nextLineTabStop, final String text) throws IOException;6
+HelpFormatter;protected String createPadding(final int len);1
+HelpFormatter;private int determineMaxSinceLength(final Options options);1
+HelpFormatter;protected int findWrapPos(final String text, final int width, final int startPos);7
+HelpFormatter;public String getArgName();1
+HelpFormatter;public int getDescPadding();1
+HelpFormatter;public int getLeftPadding();1
+HelpFormatter;public String getLongOptPrefix();1
+HelpFormatter;public String getLongOptSeparator();1
+HelpFormatter;public String getNewLine();1
+HelpFormatter;public Comparator<Option> getOptionComparator();1
+HelpFormatter;public String getOptPrefix();1
+HelpFormatter;public String getSyntaxPrefix();1
+HelpFormatter;public int getWidth();1
+HelpFormatter;public void printHelp(final int width, final String cmdLineSyntax, final String header, final Options options, final String footer);1
+HelpFormatter;public void printHelp(final int width, final String cmdLineSyntax, final String header, final Options options, final String footer, final boolean autoUsage);1
+HelpFormatter;public void printHelp(final PrintWriter pw, final int width, final String cmdLineSyntax, final String header, final Options options, final int leftPad, final int descPad, final String footer);1
+HelpFormatter;public void printHelp(final PrintWriter pw, final int width, final String cmdLineSyntax, final String header, final Options options, final int leftPad, final int descPad, final String footer, final boolean autoUsage);5
+HelpFormatter;public void printHelp(final String cmdLineSyntax, final Options options);1
+HelpFormatter;public void printHelp(final String cmdLineSyntax, final Options options, final boolean autoUsage);1
+HelpFormatter;public void printHelp(final String cmdLineSyntax, final String header, final Options options, final String footer);1
+HelpFormatter;public void printHelp(final String cmdLineSyntax, final String header, final Options options, final String footer, final boolean autoUsage);1
+HelpFormatter;public void printOptions(final PrintWriter pw, final int width, final Options options, final int leftPad, final int descPad);1
+HelpFormatter;public void printUsage(final PrintWriter pw, final int width, final String cmdLineSyntax);1
+HelpFormatter;public void printUsage(final PrintWriter pw, final int width, final String app, final Options options);6
+HelpFormatter;public void printWrapped(final PrintWriter pw, final int width, final int nextLineTabStop, final String text);1
+HelpFormatter;public void printWrapped(final PrintWriter pw, final int width, final String text);1
+HelpFormatter;protected StringBuffer renderOptions(final StringBuffer sb, final int width, final Options options, final int leftPad, final int descPad);1
+HelpFormatter;protected StringBuffer renderWrappedText(final StringBuffer sb, final int width, final int nextLineTabStop, final String text);1
+HelpFormatter;private A renderWrappedTextBlock(final A appendable, final int width, final int nextLineTabStop, final String text);3
+HelpFormatter;protected String rtrim(final String s);3
+HelpFormatter;public void setArgName(final String name);1
+HelpFormatter;public void setDescPadding(final int padding);1
+HelpFormatter;public void setLeftPadding(final int padding);1
+HelpFormatter;public void setLongOptPrefix(final String prefix);1
+HelpFormatter;public void setLongOptSeparator(final String longOptSeparator);1
+HelpFormatter;public void setNewLine(final String newline);1
+HelpFormatter;public void setOptionComparator(final Comparator<Option> comparator);1
+HelpFormatter;public void setOptPrefix(final String prefix);1
+HelpFormatter;public void setSyntaxPrefix(final String prefix);1
+HelpFormatter;public void setWidth(final int width);1
+MissingArgumentException;public Option getOption();1
+MissingOptionException;private static String createMessage(final List<?> missingOptions);3
+MissingOptionException;public List getMissingOptions();1
+Option;public static Builder builder();1
+Option;public static Builder builder(final String option);1
+Option; boolean acceptsArg();1
+Option;private void add(final String value);2
+Option;public boolean addValue(final String value);1
+Option; void clearValues();1
+Option;public Object clone();1
+Option;public boolean equals(final Object obj);3
+Option;public String getArgName();1
+Option;public int getArgs();1
+Option;public Converter<?, ?> getConverter();1
+Option;public DeprecatedAttributes getDeprecated();1
+Option;public String getDescription();1
+Option;public int getId();1
+Option;public String getKey();1
+Option;public String getLongOpt();1
+Option;public String getOpt();1
+Option;public String getSince();1
+Option;public Object getType();1
+Option;public String getValue();1
+Option;public String getValue(final int index) throws IndexOutOfBoundsException;1
+Option;public String getValue(final String defaultValue);1
+Option;public String[] getValues();1
+Option;public char getValueSeparator();1
+Option;public List<String> getValuesList();1
+Option;public boolean hasArg();1
+Option;public boolean hasArgName();1
+Option;public boolean hasArgs();1
+Option;public int hashCode();1
+Option;public boolean hasLongOpt();1
+Option;private boolean hasNoValues();1
+Option;public boolean hasOptionalArg();1
+Option;public boolean hasValueSeparator();1
+Option;public boolean isDeprecated();1
+Option;public boolean isRequired();1
+Option; void processValue(final String value);5
+Option; boolean requiresArg();3
+Option;public void setArgName(final String argName);1
+Option;public void setArgs(final int num);1
+Option;public void setConverter(final Converter<?, ?> converter);1
+Option;public void setDescription(final String description);1
+Option;public void setLongOpt(final String longOpt);1
+Option;public void setOptionalArg(final boolean optionalArg);1
+Option;public void setRequired(final boolean required);1
+Option;public void setType(final Class<?> type);1
+Option;public void setType(final Object type);1
+Option;public void setValueSeparator(final char valueSeparator);1
+Option; String toDeprecatedString();3
+Option;public String toString();5
+OptionBuilder;public static Option create() throws IllegalArgumentException;2
+OptionBuilder;public static Option create(final char opt) throws IllegalArgumentException;1
+OptionBuilder;public static Option create(final String opt) throws IllegalArgumentException;1
+OptionBuilder;public static OptionBuilder hasArg();1
+OptionBuilder;public static OptionBuilder hasArg(final boolean hasArg);1
+OptionBuilder;public static OptionBuilder hasArgs();1
+OptionBuilder;public static OptionBuilder hasArgs(final int num);1
+OptionBuilder;public static OptionBuilder hasOptionalArg();1
+OptionBuilder;public static OptionBuilder hasOptionalArgs();1
+OptionBuilder;public static OptionBuilder hasOptionalArgs(final int numArgs);1
+OptionBuilder;public static OptionBuilder isRequired();1
+OptionBuilder;public static OptionBuilder isRequired(final boolean newRequired);1
+OptionBuilder;private static void reset();1
+OptionBuilder;public static OptionBuilder withArgName(final String name);1
+OptionBuilder;public static OptionBuilder withDescription(final String newDescription);1
+OptionBuilder;public static OptionBuilder withLongOpt(final String newLongopt);1
+OptionBuilder;public static OptionBuilder withType(final Class<?> newType);1
+OptionBuilder;public static OptionBuilder withType(final Object newType);1
+OptionBuilder;public static OptionBuilder withValueSeparator();1
+OptionBuilder;public static OptionBuilder withValueSeparator(final char sep);1
+OptionGroup;public OptionGroup addOption(final Option option);1
+OptionGroup;public Collection<String> getNames();1
+OptionGroup;public Collection<Option> getOptions();1
+OptionGroup;public String getSelected();1
+OptionGroup;public boolean isRequired();1
+OptionGroup;public boolean isSelected();1
+OptionGroup;public void setRequired(final boolean required);1
+OptionGroup;public void setSelected(final Option option) throws AlreadySelectedException;3
+OptionGroup;public String toString();5
+Options;public Options addOption(final Option opt);4
+Options;public Options addOption(final String opt, final boolean hasArg, final String description);1
+Options;public Options addOption(final String opt, final String description);1
+Options;public Options addOption(final String opt, final String longOpt, final boolean hasArg, final String description);1
+Options;public Options addOptionGroup(final OptionGroup group);2
+Options;public Options addOptions(final Options options);2
+Options;public Options addRequiredOption(final String opt, final String longOpt, final boolean hasArg, final String description);1
+Options;public List<String> getMatchingOptions(final String opt);3
+Options;public Option getOption(final String opt);1
+Options;public OptionGroup getOptionGroup(final Option opt);1
+Options; Collection<OptionGroup> getOptionGroups();1
+Options;public Collection<Option> getOptions();1
+Options;public List<?> getRequiredOptions();1
+Options;public boolean hasLongOption(final String opt);1
+Options;public boolean hasOption(final String opt);1
+Options;public boolean hasShortOption(final String opt);1
+Options; List<Option> helpOptions();1
+Options;public String toString();1
+OptionValidator;private static boolean isValidChar(final char c);1
+OptionValidator;private static boolean isValidOpt(final char c);1
+OptionValidator;private static boolean search(final char[] chars, final char c);2
+OptionValidator; static String validate(final String option) throws IllegalArgumentException;7
+ParseException;public static ParseException wrap(final Throwable e) throws UnsupportedOperationException;3
+Parser;protected void checkRequiredOptions() throws MissingOptionException;2
+Parser;protected abstract String[] flatten(Options opts, String[] arguments, boolean stopAtNonOption) throws ParseException;1
+Parser;protected Options getOptions();1
+Parser;protected List getRequiredOptions();1
+Parser;public CommandLine parse(final Options options, final String[] arguments) throws ParseException;1
+Parser;public CommandLine parse(final Options options, final String[] arguments, final boolean stopAtNonOption) throws ParseException;1
+Parser;public CommandLine parse(final Options options, final String[] arguments, final Properties properties) throws ParseException;1
+Parser;public CommandLine parse(final Options options, final String[] arguments, final Properties properties, final boolean stopAtNonOption) throws ParseException;12
+Parser;public void processArgs(final Option opt, final ListIterator<String> iter) throws ParseException;4
+Parser;protected void processOption(final String arg, final ListIterator<String> iter) throws ParseException;3
+Parser;protected void processProperties(final Properties properties) throws ParseException;8
+Parser;protected void setOptions(final Options options);1
+Parser;private void updateRequiredOptions(final Option opt) throws ParseException;4
+PatternOptionBuilder;public static Object getValueClass(final char ch);1
+PatternOptionBuilder;public static Class<?> getValueType(final char ch);1
+PatternOptionBuilder;public static boolean isValueCode(final char ch);1
+PatternOptionBuilder;public static Options parsePattern(final String pattern);6
+PatternOptionBuilder; static T unsupported();1
+PosixParser;protected void burstToken(final String token, final boolean stopAtNonOption);5
+PosixParser;protected String[] flatten(final Options options, final String[] arguments, final boolean stopAtNonOption) throws ParseException;12
+PosixParser;private void gobble(final Iterator<String> iter);3
+PosixParser;private void init();1
+PosixParser;private void processNonOptionToken(final String value, final boolean stopAtNonOption);2
+PosixParser;private void processOptionToken(final String token, final boolean stopAtNonOption);3
+TypeHandler;public static Class<?> createClass(final String className) throws ParseException;1
+TypeHandler;public static Date createDate(final String string);1
+TypeHandler;public static Map<Class<?>, Converter<?, ? extends Throwable>> createDefaultMap();1
+TypeHandler;public static File createFile(final String string);1
+TypeHandler;public static File[] createFiles(final String string);1
+TypeHandler;public static Number createNumber(final String string) throws ParseException;1
+TypeHandler;public static Object createObject(final String className) throws ParseException;1
+TypeHandler;public static URL createURL(final String string) throws ParseException;1
+TypeHandler;public static T createValue(final String string, final Class<T> clazz) throws ParseException;1
+TypeHandler;public static Object createValue(final String string, final Object obj) throws ParseException;1
+TypeHandler;private static T createValueUnchecked(final String string, final Class<T> clazz);1
+TypeHandler;public static TypeHandler getDefault();1
+TypeHandler;public static FileInputStream openFile(final String string) throws ParseException;1
+TypeHandler;private static Map<Class<?>, Converter<?, ? extends Throwable>> putDefaultMap(final Map<Class<?>, Converter<?, ? extends Throwable>> map);1
+TypeHandler;public Converter<T, ?> getConverter(final Class<T> clazz);1
+UnrecognizedOptionException;public String getOption();1
+Util; static boolean isEmpty(final Object[] array);1
+Util; static boolean isEmpty(final String str);1
+Util; static String stripLeadingAndTrailingQuotes(final String str);3
+Util; static String stripLeadingHyphens(final String str);4
+AbstractParserTestCase;private CommandLine parse(final CommandLineParser parser, final Options options, final String[] args, final Properties properties) throws ParseException;3
+AbstractParserTestCase;public void setUp();1
+AbstractParserTestCase;public void testAmbiguousArgParsing() throws Exception;1
+AbstractParserTestCase;public void testAmbiguousLongWithoutEqualSingleDash() throws Exception;1
+AbstractParserTestCase;public void testAmbiguousLongWithoutEqualSingleDash2() throws Exception;1
+AbstractParserTestCase;public void testAmbiguousPartialLongOption1() throws Exception;1
+AbstractParserTestCase;public void testAmbiguousPartialLongOption2() throws Exception;1
+AbstractParserTestCase;public void testAmbiguousPartialLongOption3() throws Exception;1
+AbstractParserTestCase;public void testAmbiguousPartialLongOption4() throws Exception;1
+AbstractParserTestCase;public void testArgumentStartingWithHyphen() throws Exception;1
+AbstractParserTestCase;public void testBursting() throws Exception;1
+AbstractParserTestCase;public void testDoubleDash1() throws Exception;1
+AbstractParserTestCase;public void testDoubleDash2() throws Exception;1
+AbstractParserTestCase;public void testLongOptionQuoteHandling() throws Exception;1
+AbstractParserTestCase;public void testLongOptionWithEqualsQuoteHandling() throws Exception;1
+AbstractParserTestCase;public void testLongWithEqualDoubleDash() throws Exception;1
+AbstractParserTestCase;public void testLongWithEqualSingleDash() throws Exception;1
+AbstractParserTestCase;public void testLongWithoutEqualDoubleDash() throws Exception;1
+AbstractParserTestCase;public void testLongWithoutEqualSingleDash() throws Exception;1
+AbstractParserTestCase;public void testLongWithUnexpectedArgument1() throws Exception;1
+AbstractParserTestCase;public void testLongWithUnexpectedArgument2() throws Exception;1
+AbstractParserTestCase;public void testMissingArg() throws Exception;1
+AbstractParserTestCase;public void testMissingArgWithBursting() throws Exception;1
+AbstractParserTestCase;public void testMissingRequiredGroup() throws Exception;1
+AbstractParserTestCase;public void testMissingRequiredOption();1
+AbstractParserTestCase;public void testMissingRequiredOptions();1
+AbstractParserTestCase;public void testMultiple() throws Exception;1
+AbstractParserTestCase;public void testMultipleWithLong() throws Exception;1
+AbstractParserTestCase;public void testMultipleWithNull() throws Exception;1
+AbstractParserTestCase;public void testNegativeArgument() throws Exception;1
+AbstractParserTestCase;public void testNegativeOption() throws Exception;1
+AbstractParserTestCase;public void testOptionalArgsOptionBuilder() throws Exception;1
+AbstractParserTestCase;public void testOptionalArgsOptionDotBuilder() throws Exception;1
+AbstractParserTestCase;public void testOptionAndRequiredOption() throws Exception;1
+AbstractParserTestCase;public void testOptionGroup() throws Exception;1
+AbstractParserTestCase;public void testOptionGroupLong() throws Exception;1
+AbstractParserTestCase;public void testPartialLongOptionSingleDash() throws Exception;1
+AbstractParserTestCase;public void testPropertiesOption1() throws Exception;1
+AbstractParserTestCase;public void testPropertiesOption2() throws Exception;1
+AbstractParserTestCase;public void testPropertyOptionFlags() throws Exception;1
+AbstractParserTestCase;public void testPropertyOptionGroup() throws Exception;1
+AbstractParserTestCase;public void testPropertyOptionMultipleValues() throws Exception;1
+AbstractParserTestCase;public void testPropertyOptionRequired() throws Exception;1
+AbstractParserTestCase;public void testPropertyOptionSingularValue() throws Exception;1
+AbstractParserTestCase;public void testPropertyOptionUnexpected() throws Exception;1
+AbstractParserTestCase;public void testPropertyOverrideValues() throws Exception;1
+AbstractParserTestCase;public void testReuseOptionsTwice() throws Exception;1
+AbstractParserTestCase;public void testShortOptionConcatenatedQuoteHandling() throws Exception;1
+AbstractParserTestCase;public void testShortOptionQuoteHandling() throws Exception;1
+AbstractParserTestCase;public void testShortWithEqual() throws Exception;1
+AbstractParserTestCase;public void testShortWithoutEqual() throws Exception;1
+AbstractParserTestCase;public void testShortWithUnexpectedArgument() throws Exception;1
+AbstractParserTestCase;public void testSimpleLong() throws Exception;1
+AbstractParserTestCase;public void testSimpleShort() throws Exception;1
+AbstractParserTestCase;public void testSingleDash() throws Exception;1
+AbstractParserTestCase;public void testStopAtExpectedArg() throws Exception;1
+AbstractParserTestCase;public void testStopAtNonOptionLong() throws Exception;1
+AbstractParserTestCase;public void testStopAtNonOptionShort() throws Exception;1
+AbstractParserTestCase;public void testStopAtUnexpectedArg() throws Exception;1
+AbstractParserTestCase;public void testStopBursting() throws Exception;1
+AbstractParserTestCase;public void testStopBursting2() throws Exception;1
+AbstractParserTestCase;public void testUnambiguousPartialLongOption1() throws Exception;1
+AbstractParserTestCase;public void testUnambiguousPartialLongOption2() throws Exception;1
+AbstractParserTestCase;public void testUnambiguousPartialLongOption3() throws Exception;1
+AbstractParserTestCase;public void testUnambiguousPartialLongOption4() throws Exception;1
+AbstractParserTestCase;public void testUnlimitedArgs() throws Exception;1
+AbstractParserTestCase;public void testUnrecognizedOption() throws Exception;1
+AbstractParserTestCase;public void testUnrecognizedOptionWithBursting() throws Exception;1
+AbstractParserTestCase;public void testWithRequiredOption() throws Exception;1
+AlreadySelectedExceptionTest;public void testConstructor();1
+ApplicationTest;public void testAnt() throws Exception;1
+ApplicationTest;public void testGroovy() throws Exception;1
+ApplicationTest;public void testLs() throws Exception;1
+ApplicationTest;public void testMan();1
+ApplicationTest;public void testNLT() throws Exception;1
+ArgumentIsOptionTest;public void setUp();1
+ArgumentIsOptionTest;public void testOption() throws Exception;1
+ArgumentIsOptionTest;public void testOptionAndOptionWithArgument() throws Exception;1
+ArgumentIsOptionTest;public void testOptionWithArgument() throws Exception;1
+BasicParserTest;public void setUp();1
+BasicParserTest;public void testAmbiguousLongWithoutEqualSingleDash() throws Exception;1
+BasicParserTest;public void testAmbiguousLongWithoutEqualSingleDash2() throws Exception;1
+BasicParserTest;public void testAmbiguousPartialLongOption1() throws Exception;1
+BasicParserTest;public void testAmbiguousPartialLongOption2() throws Exception;1
+BasicParserTest;public void testAmbiguousPartialLongOption3() throws Exception;1
+BasicParserTest;public void testAmbiguousPartialLongOption4() throws Exception;1
+BasicParserTest;public void testBursting() throws Exception;1
+BasicParserTest;public void testDoubleDash2() throws Exception;1
+BasicParserTest;public void testLongOptionWithEqualsQuoteHandling() throws Exception;1
+BasicParserTest;public void testLongWithEqualDoubleDash() throws Exception;1
+BasicParserTest;public void testLongWithEqualSingleDash() throws Exception;1
+BasicParserTest;public void testLongWithoutEqualSingleDash() throws Exception;1
+BasicParserTest;public void testMissingArgWithBursting() throws Exception;1
+BasicParserTest;public void testNegativeOption() throws Exception;1
+BasicParserTest;public void testPartialLongOptionSingleDash() throws Exception;1
+BasicParserTest;public void testPropertiesOption1() throws Exception;1
+BasicParserTest;public void testPropertiesOption2() throws Exception;1
+BasicParserTest;public void testShortOptionConcatenatedQuoteHandling() throws Exception;1
+BasicParserTest;public void testShortWithEqual() throws Exception;1
+BasicParserTest;public void testShortWithoutEqual() throws Exception;1
+BasicParserTest;public void testStopBursting() throws Exception;1
+BasicParserTest;public void testStopBursting2() throws Exception;1
+BasicParserTest;public void testUnambiguousPartialLongOption1() throws Exception;1
+BasicParserTest;public void testUnambiguousPartialLongOption2() throws Exception;1
+BasicParserTest;public void testUnambiguousPartialLongOption3() throws Exception;1
+BasicParserTest;public void testUnambiguousPartialLongOption4() throws Exception;1
+BasicParserTest;public void testUnrecognizedOptionWithBursting() throws Exception;1
+BugCLI133Test;public void testOrder() throws ParseException;1
+BugCLI13Test;public void testCLI13() throws ParseException;1
+BugCLI148Test;public void setUp() throws Exception;1
+BugCLI148Test;public void testWorkaround1() throws Exception;1
+BugCLI148Test;public void testWorkaround2() throws Exception;1
+BugCLI162Test;public void setUp();1
+BugCLI162Test;public void testInfiniteLoop();1
+BugCLI162Test;public void testLongLineChunking();1
+BugCLI162Test;public void testLongLineChunkingIndentIgnored();1
+BugCLI162Test;public void testPrintHelpLongLines();1
+BugCLI18Test;public void testCLI18();1
+BugCLI252Test;private Options getOptions();1
+BugCLI252Test;public void testAmbiquousOptionName();1
+BugCLI252Test;public void testExactOptionNameMatch() throws ParseException;1
+BugCLI265Test;public void setUp();1
+BugCLI265Test;public void testShouldParseConcatenatedShortOptions() throws Exception;1
+BugCLI265Test;public void testShouldParseShortOptionWithoutValue() throws Exception;1
+BugCLI265Test;public void testShouldParseShortOptionWithValue() throws Exception;1
+BugCLI266Test;private void buildOptionsGroup(final Options options);1
+BugCLI266Test;private Options getOptions();1
+BugCLI266Test;public void testOptionComparatorDefaultOrder();1
+BugCLI266Test;public void testOptionComparatorInsertedOrder();1
+BugCLI312Test;public void testNoOptionValues();1
+BugCLI312Test;public void testPropertyStyleOption_withGetOptionProperties() throws ParseException;1
+BugCLI312Test;public void testPropertyStyleOption_withGetOptions() throws ParseException;2
+BugCLI325Test;public void testCli325() throws ParseException;1
+BugCLI71Test;public void setUp();1
+BugCLI71Test;public void testBasic() throws Exception;1
+BugCLI71Test;public void testGetsDefaultIfOptional() throws Exception;1
+BugCLI71Test;public void testLackOfError() throws Exception;1
+BugCLI71Test;public void testMistakenArgument() throws Exception;1
+BugsTest;public void test11456() throws Exception;1
+BugsTest;public void test11457() throws Exception;1
+BugsTest;public void test11458() throws Exception;2
+BugsTest;public void test11680() throws Exception;1
+BugsTest;public void test12210() throws Exception;3
+BugsTest;public void test13425() throws Exception;1
+BugsTest;public void test13666() throws Exception;1
+BugsTest;public void test13666_Builder() throws Exception;1
+BugsTest;public void test13935() throws Exception;1
+BugsTest;public void test14786() throws Exception;1
+BugsTest;public void test15046() throws Exception;1
+BugsTest;public void test15648() throws Exception;1
+BugsTest;public void test31148() throws ParseException;1
+CommandLineTest;private static Stream<Arguments> createHasOptionParameters() throws ParseException;1
+CommandLineTest;private static Stream<Arguments> createOptionValueParameters() throws ParseException;1
+CommandLineTest;private static Stream<Arguments> createOptionValuesParameters() throws ParseException;1
+CommandLineTest;private static Stream<Arguments> createParsedOptionValueParameters() throws ParseException;1
+CommandLineTest; char asChar(final Option opt);1
+CommandLineTest;private void assertWritten(final boolean optDep, final ByteArrayOutputStream baos);2
+CommandLineTest; void checkHandler(final boolean optDep, final List<Option> handler, final Option opt);2
+CommandLineTest;public void getOptionValuesTest(final String[] args, final Option opt, final OptionGroup optionGroup, final boolean optDep, final String[] optValue, final boolean grpDep, final String[] grpValue, final Option grpOpt) throws ParseException;1
+CommandLineTest;public void getOptionValueTest(final String[] args, final Option opt, final OptionGroup optionGroup, final boolean optDep, final String optValue, final boolean grpDep, final String grpValue, final Option grpOpt) throws ParseException;1
+CommandLineTest;public void getParsedOptionValueTest(final String[] args, final Option opt, final OptionGroup optionGroup, final boolean optDep, final Integer optValue, final boolean grpDep, final Integer grpValue, final Option grpOpt) throws ParseException;1
+CommandLineTest;public void hasOptionNoDeprecationHandlerTest(final String[] args, final Option opt, final OptionGroup optionGroup, final boolean optDep, final boolean has, final boolean grpDep, final boolean hasGrp, final Option grpOpt) throws ParseException;1
+CommandLineTest;public void hasOptionNullDeprecationHandlerTest(final String[] args, final Option opt, final OptionGroup optionGroup, final boolean optDep, final boolean has, final boolean grpDep, final boolean hasGrp, final Option grpOpt) throws ParseException;1
+CommandLineTest;public void hasOptionTest(final String[] args, final Option opt, final OptionGroup optionGroup, final boolean optDep, final boolean has, final boolean grpDep, final boolean hasGrp, final Option grpOpt) throws ParseException;1
+CommandLineTest;public void noDeprecationHandlerTest(final String[] args, final Option opt, final OptionGroup optionGroup, final boolean optDep, final String optValue, final boolean grpDep, final String grpValue, final Option grpOpt) throws ParseException;1
+CommandLineTest;public void testBadGetParsedOptionValue() throws Exception;1
+CommandLineTest;public void testBuilder();1
+CommandLineTest;public void testBuilderNullArgs();1
+CommandLineTest;public void testBuilderNullOption();1
+CommandLineTest;public void testGetOptionProperties() throws Exception;1
+CommandLineTest;public void testGetOptionPropertiesWithOption() throws Exception;1
+CommandLineTest;public void testGetOptionsBuilder();1
+CommandLineTest;public void testGetOptionsCtor();1
+CommandLineTest;public void testNullOption() throws Exception;1
+ConverterTests;private static Stream<Arguments> numberTestParameters();1
+ConverterTests;public void classTests() throws Exception;1
+ConverterTests;public void dateTests() throws Exception;1
+ConverterTests;public void fileTests() throws Exception;1
+ConverterTests;public void numberTests(final String str, final Number expected) throws Exception;2
+ConverterTests;public void objectTests() throws Exception;1
+ConverterTests;public void urlTests() throws Exception;1
+DefaultParserTest;public void setUp();1
+DefaultParserTest;public void testBuilder();1
+DefaultParserTest;public void testDeprecated() throws ParseException;1
+DefaultParserTest;public void testLongOptionQuoteHandlingWithoutStrip() throws Exception;1
+DefaultParserTest;public void testLongOptionQuoteHandlingWithStrip() throws Exception;1
+DefaultParserTest;public void testLongOptionWithEqualsQuoteHandling() throws Exception;1
+DefaultParserTest;public void testLongOptionWithEqualsQuoteHandlingWithoutStrip() throws Exception;1
+DefaultParserTest;public void testLongOptionWithEqualsQuoteHandlingWithStrip() throws Exception;1
+DefaultParserTest;public void testShortOptionConcatenatedQuoteHandling() throws Exception;1
+DefaultParserTest;public void testShortOptionQuoteHandlingWithoutStrip() throws Exception;1
+DefaultParserTest;public void testShortOptionQuoteHandlingWithStrip() throws Exception;1
+DeprecatedAttributesTest;public void testBuilderNonDefaults();1
+DeprecatedAttributesTest;public void testBuilderNonDefaultsToString();1
+DeprecatedAttributesTest;public void testDefaultBuilder();1
+DeprecatedAttributesTest;public void testDefaultToString();1
+DisablePartialMatchingTest;public void testDisablePartialMatching() throws Exception;1
+DisablePartialMatchingTest;public void testRegularPartialMatching() throws Exception;1
+GnuParserTest;public void setUp();1
+GnuParserTest;public void testAmbiguousLongWithoutEqualSingleDash() throws Exception;1
+GnuParserTest;public void testAmbiguousLongWithoutEqualSingleDash2() throws Exception;1
+GnuParserTest;public void testAmbiguousPartialLongOption1() throws Exception;1
+GnuParserTest;public void testAmbiguousPartialLongOption2() throws Exception;1
+GnuParserTest;public void testAmbiguousPartialLongOption3() throws Exception;1
+GnuParserTest;public void testAmbiguousPartialLongOption4() throws Exception;1
+GnuParserTest;public void testBursting() throws Exception;1
+GnuParserTest;public void testDoubleDash2() throws Exception;1
+GnuParserTest;public void testLongWithoutEqualSingleDash() throws Exception;1
+GnuParserTest;public void testLongWithUnexpectedArgument1() throws Exception;1
+GnuParserTest;public void testLongWithUnexpectedArgument2() throws Exception;1
+GnuParserTest;public void testMissingArgWithBursting() throws Exception;1
+GnuParserTest;public void testNegativeOption() throws Exception;1
+GnuParserTest;public void testPartialLongOptionSingleDash() throws Exception;1
+GnuParserTest;public void testShortWithUnexpectedArgument() throws Exception;1
+GnuParserTest;public void testStopBursting() throws Exception;1
+GnuParserTest;public void testStopBursting2() throws Exception;1
+GnuParserTest;public void testUnambiguousPartialLongOption1() throws Exception;1
+GnuParserTest;public void testUnambiguousPartialLongOption2() throws Exception;1
+GnuParserTest;public void testUnambiguousPartialLongOption3() throws Exception;1
+GnuParserTest;public void testUnambiguousPartialLongOption4() throws Exception;1
+GnuParserTest;public void testUnrecognizedOptionWithBursting() throws Exception;1
+HelpFormatterTest; static Stream<Arguments> deprecatedOptionsProvider();1
+HelpFormatterTest;public void testAccessors();1
+HelpFormatterTest;public void testAutomaticUsage();1
+HelpFormatterTest;public void testDefaultArgName();1
+HelpFormatterTest;public void testFindWrapPos();1
+HelpFormatterTest;public void testHeaderStartingWithLineSeparator0();1
+HelpFormatterTest;public void testHeaderStartingWithLineSeparator1();1
+HelpFormatterTest;public void testHelpWithLongOptSeparator();1
+HelpFormatterTest;public void testIndentedHeaderAndFooter();1
+HelpFormatterTest;public void testOptionWithoutShortFormat();1
+HelpFormatterTest;public void testOptionWithoutShortFormat2();1
+HelpFormatterTest;public void testPrintDeprecatedOptions(final HelpFormatter hf, final Option option, final String expectedTxt);2
+HelpFormatterTest;public void testPrintHelpNewlineFooter();1
+HelpFormatterTest;public void testPrintHelpNewlineHeader();1
+HelpFormatterTest;public void testPrintHelpWithEmptySyntax();1
+HelpFormatterTest;public void testPrintHelpWithSince();1
+HelpFormatterTest;public void testPrintOptionGroupUsage();1
+HelpFormatterTest;public void testPrintOptions();1
+HelpFormatterTest;public void testPrintOptionWithEmptyArgNameUsage();1
+HelpFormatterTest;public void testPrintRequiredOptionGroupUsage();1
+HelpFormatterTest;public void testPrintSortedUsage();1
+HelpFormatterTest;public void testPrintSortedUsageWithNullComparator();1
+HelpFormatterTest;public void testPrintUsage();1
+HelpFormatterTest;public void testRenderSince() throws IOException;1
+HelpFormatterTest;public void testRenderWrappedTextMultiLine();1
+HelpFormatterTest;public void testRenderWrappedTextMultiLinePadded();1
+HelpFormatterTest;public void testRenderWrappedTextSingleLine() throws IOException;1
+HelpFormatterTest;public void testRenderWrappedTextSingleLinePadded();1
+HelpFormatterTest;public void testRenderWrappedTextSingleLinePadded2();1
+HelpFormatterTest;public void testRenderWrappedTextWordCut();1
+HelpFormatterTest;public void testRtrim();1
+HelpFormatterTest;public void testUsageWithLongOptSeparator();1
+OptionBuilderTest;public void testBaseOptionCharOpt();1
+OptionBuilderTest;public void testBaseOptionStringOpt();1
+OptionBuilderTest;public void testBuilderIsResettedAlways();1
+OptionBuilderTest;public void testCompleteOption();1
+OptionBuilderTest;public void testCreateIncompleteOption();1
+OptionBuilderTest;public void testIllegalOptions();1
+OptionBuilderTest;public void testOptionArgNumbers();1
+OptionBuilderTest;public void testSpecialOptChars() throws Exception;1
+OptionBuilderTest;public void testTwoCompleteOptions();1
+OptionGroupTest;public void setUp();1
+OptionGroupTest;public void testGetNames();1
+OptionGroupTest;public void testNoOptionsExtraArgs() throws Exception;1
+OptionGroupTest;public void testSingleLongOption() throws Exception;1
+OptionGroupTest;public void testSingleOption() throws Exception;1
+OptionGroupTest;public void testSingleOptionFromGroup() throws Exception;1
+OptionGroupTest;public void testToString();3
+OptionGroupTest;public void testTwoLongOptionsFromGroup() throws Exception;1
+OptionGroupTest;public void testTwoOptionsFromDifferentGroup() throws Exception;1
+OptionGroupTest;public void testTwoOptionsFromGroup() throws Exception;1
+OptionGroupTest;public void testTwoOptionsFromGroupWithProperties() throws Exception;1
+OptionGroupTest;public void testTwoValidLongOptions() throws Exception;1
+OptionGroupTest;public void testTwoValidOptions() throws Exception;1
+OptionGroupTest;public void testValidLongOnlyOptions() throws Exception;1
+OptionsTest;private void assertToStrings(final Option option);1
+OptionsTest;public void testAddConflictingOptions();1
+OptionsTest;public void testAddNonConflictingOptions();1
+OptionsTest;public void testAddOptions();1
+OptionsTest;public void testAddOptions2X();1
+OptionsTest;public void testDeprecated();1
+OptionsTest;public void testDuplicateLong();1
+OptionsTest;public void testDuplicateSimple();1
+OptionsTest;public void testGetMatchingOpts();1
+OptionsTest;public void testGetOptionsGroups();1
+OptionsTest;public void testHelpOptions();1
+OptionsTest;public void testLong();1
+OptionsTest;public void testMissingOptionException() throws ParseException;1
+OptionsTest;public void testMissingOptionsException() throws ParseException;1
+OptionsTest;public void testSimple();1
+OptionsTest;public void testToString();1
+OptionTest;private static void checkOption(final Option option, final String opt, final String description, final String longOpt, final int numArgs, final String argName, final boolean required, final boolean optionalArg, final char valueSeparator, final Class<?> cls, final String deprecatedDesc, final Boolean deprecatedForRemoval, final String deprecatedSince);4
+OptionTest;private Option roundTrip(final Option o) throws IOException, ClassNotFoundException;1
+OptionTest;public void testAddValue();1
+OptionTest;public void testBuilderEmpty();1
+OptionTest;public void testBuilderInsufficientParams1();1
+OptionTest;public void testBuilderInsufficientParams2();1
+OptionTest;public void testBuilderInvalidOptionName0();1
+OptionTest;public void testBuilderInvalidOptionName1();1
+OptionTest;public void testBuilderInvalidOptionName2();1
+OptionTest;public void testBuilderInvalidOptionName3();1
+OptionTest;public void testBuilderInvalidOptionName4();1
+OptionTest;public void testBuilderMethods();1
+OptionTest;public void testClear();1
+OptionTest;public void testClone();1
+OptionTest;public void testEquals();1
+OptionTest;public void testGetValue();1
+OptionTest;public void testHasArgName();1
+OptionTest;public void testHasArgs();1
+OptionTest;public void testHashCode();1
+OptionTest;public void testSerialization() throws IOException, ClassNotFoundException;1
+OptionTest;public void testSubclass();1
+OptionTest;public void testTypeClass();1
+OptionTest;public void testTypeObject();1
+OptionValidatorTest;private static Stream<Arguments> optionParameters();1
+OptionValidatorTest;public static void setup();4
+OptionValidatorTest;public void testExclusivity();1
+OptionValidatorTest;public void validateTest(final String str, final boolean expected, final String name);2
+ParseExceptionTest;public void testConstructor();1
+PatternOptionBuilderTest;public void testClassPattern() throws Exception;1
+PatternOptionBuilderTest;public void testEmptyPattern();1
+PatternOptionBuilderTest;public void testExistingFilePattern() throws Exception;1
+PatternOptionBuilderTest;public void testExistingFilePatternFileNotExist() throws Exception;1
+PatternOptionBuilderTest;public void testNumberPattern() throws Exception;1
+PatternOptionBuilderTest;public void testObjectPattern() throws Exception;1
+PatternOptionBuilderTest;public void testRequiredOption() throws Exception;1
+PatternOptionBuilderTest;public void testSimplePattern() throws Exception;1
+PatternOptionBuilderTest;public void testUntypedPattern() throws Exception;1
+PatternOptionBuilderTest;public void testURLPattern() throws Exception;1
+PosixParserTest;public void setUp();1
+PosixParserTest;public void testAmbiguousLongWithoutEqualSingleDash() throws Exception;1
+PosixParserTest;public void testAmbiguousLongWithoutEqualSingleDash2() throws Exception;1
+PosixParserTest;public void testAmbiguousPartialLongOption4() throws Exception;1
+PosixParserTest;public void testDoubleDash2() throws Exception;1
+PosixParserTest;public void testLongWithEqualSingleDash() throws Exception;1
+PosixParserTest;public void testLongWithoutEqualSingleDash() throws Exception;1
+PosixParserTest;public void testLongWithUnexpectedArgument1() throws Exception;1
+PosixParserTest;public void testNegativeOption() throws Exception;1
+PosixParserTest;public void testShortWithEqual() throws Exception;1
+PosixParserTest;public void testUnambiguousPartialLongOption4() throws Exception;1
+SolrCliTest;public static String getDefaultSolrUrl();1
+SolrCliTest;public void testOptions();1
+SolrCreateToolTest;public List<Option> getOptions();1
+SolrCreateToolTest;private String printHelp(final HelpFormatter formatter);1
+SolrCreateToolTest;public void testHelpFormatter();1
+SolrCreateToolTest;public void testHelpFormatterDeprecated();1
+TypeHandlerTest;private static Stream<Date> createDateFixtures();1
+TypeHandlerTest;private static Stream<Arguments> createValueTestParameters() throws MalformedURLException;1
+TypeHandlerTest;public void testCreateClass() throws ParseException;1
+TypeHandlerTest;public void testCreateDate(final Date date);1
+TypeHandlerTest;public void testCreateFile();1
+TypeHandlerTest;public void testCreateFiles();1
+TypeHandlerTest;public void testCreateNumber() throws ParseException;1
+TypeHandlerTest;public void testCreateObject() throws ParseException;1
+TypeHandlerTest;public void testCreateURL() throws ParseException, MalformedURLException;1
+TypeHandlerTest;public void testCreateValue(final String str, final Class<?> type, final Object expected) throws Exception;2
+TypeHandlerTest;public void testCreateValueExistingFile() throws Exception;1
+TypeHandlerTest;public void testnstantiableEquals();1
+TypeHandlerTest;public void testOpenFile() throws ParseException, IOException;1
+TypeHandlerTest;public void testRegister();1
+UnrecognizedOptionExceptionTest;public void testConstructor();1
+UtilTest;public void testStripLeadingAndTrailingQuotes();1
+UtilTest;public void testStripLeadingHyphens();1
+ValuesTest;public void setUp() throws Exception;1
+ValuesTest;public void testCharSeparator();1
+ValuesTest;public void testComplexValues();1
+ValuesTest;public void testExtraArgs();1
+ValuesTest;public void testMultipleArgValues();1
+ValuesTest;public void testShortArgs();1
+ValuesTest;public void testShortArgsWithValue();1
+ValuesTest;public void testTwoArgValues();1
+ValueTest;protected static Stream<CommandLineParser> parsers();1
+ValueTest;public void setUp() throws Exception;1
+ValueTest;public void testLongNoArg();1
+ValueTest;public void testLongNoArgWithOption();1
+ValueTest;public void testLongOptionalArgValue(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongOptionalArgValues(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongOptionalArgValuesWithOption(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongOptionalArgValueWithOption(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongOptionalNArgValues(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongOptionalNArgValuesWithOption(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongOptionalNoValue(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongOptionalNoValueWithOption(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testLongWithArg();1
+ValueTest;public void testLongWithArgWithOption();1
+ValueTest;public void testShortNoArg();1
+ValueTest;public void testShortNoArgWithOption();1
+ValueTest;public void testShortOptionalArgNoValue(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testShortOptionalArgNoValueWithOption(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testShortOptionalArgValue(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testShortOptionalArgValues(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testShortOptionalArgValuesWithOption(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testShortOptionalArgValueWithOption(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testShortOptionalNArgValues(final CommandLineParser parser) throws Exception;1
+ValueTest;public void testShortOptionalNArgValuesSeparated() throws Exception;1
+ValueTest;public void testShortOptionalNArgValuesWithOption() throws Exception;1
+ValueTest;public void testShortWithArg();1
+ValueTest;public void testShortWithArgWithOption();1

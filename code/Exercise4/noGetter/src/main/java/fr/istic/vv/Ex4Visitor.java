@@ -1,6 +1,6 @@
 package fr.istic.vv;
 
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import java.util.List;
 
 import com.github.javaparser.ast.CompilationUnit;
@@ -10,7 +10,7 @@ import com.github.javaparser.ast.visitor.VoidVisitorWithDefaults;
 
 // This class visits a compilation unit and
 // prints all public enum, classes or interfaces along with their public methods
-public class Visitor extends VoidVisitorWithDefaults<Void> {
+public class Ex4Visitor extends VoidVisitorWithDefaults<Void> {
 
     @Override
     public void visit(CompilationUnit unit, Void arg) {
@@ -22,9 +22,10 @@ public class Visitor extends VoidVisitorWithDefaults<Void> {
     @Override
     public void visit(ClassOrInterfaceDeclaration declaration, Void arg) {
         List<MethodDeclaration> methodsList = declaration.getMethods();
+        PrintWriter writer = NoGetter.getPrintWriter();
         for (FieldDeclaration field : declaration.getFields()){
             if(field.isPrivate() && !hasGetter(field.getVariable(0), methodsList)){
-                System.out.println(field);
+                writer.println(field.getCommonType()+";"+field.getVariable(0)+";"+declaration.getNameAsString());
             }
         }
     }

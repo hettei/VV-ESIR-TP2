@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.istic.vv</groupId>
-    <artifactId>exercice4</artifactId>
+    <artifactId>exercice5</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -20,7 +20,13 @@
             <artifactId>javaparser-core</artifactId>
             <version>3.16.2</version>
         </dependency>
+        <dependency>
+        <groupId>org.jfree</groupId>
+        <artifactId>jfreechart</artifactId>
+        <version>1.5.3</version>
+    </dependency>
     </dependencies>
+    
 
     <build>
         <!-- Creates a jar and sets the main class so it can be executed directly wit java -jar .-->
@@ -33,7 +39,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>fr.istic.vv.NoGetter</mainClass>
+                            <mainClass>fr.istic.vv.CCcalc</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -46,7 +52,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>fr.istic.vv.NoGetter</mainClass>
+                            <mainClass>fr.istic.vv.CCcalc</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

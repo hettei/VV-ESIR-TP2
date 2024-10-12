@@ -1,0 +1,123 @@
+Field_Type;Field;Class
+long;serialVersionUID = 3674381532418544760L;AlreadySelectedException
+OptionGroup;group;AlreadySelectedException
+long;serialVersionUID = 5829816121277947229L;AmbiguousOptionException
+long;serialVersionUID = 1L;CommandLine
+Consumer<Option>;deprecatedHandler;CommandLine
+boolean;allowPartialMatching;DefaultParser
+Boolean;stripLeadingAndTrailingQuotes;DefaultParser
+Consumer<Option>;deprecatedHandler;DefaultParser
+String;EMPTY_STRING = "";DeprecatedAttributes
+boolean;forRemoval;DeprecatedAttributes
+String;HEADER_OPTIONS = "Options";HelpFormatter
+String;HEADER_SINCE = "Since";HelpFormatter
+String;HEADER_DESCRIPTION = "Description";HelpFormatter
+Function<Option, String>;deprecatedFormatFunction;HelpFormatter
+PrintWriter;printWriter;HelpFormatter
+boolean;showSince;HelpFormatter
+long;serialVersionUID = -7098538588704965017L;MissingArgumentException
+long;serialVersionUID = 8161889051578563249L;MissingOptionException
+long;serialVersionUID = 1L;Option
+int;argCount = UNINITIALIZED;Option
+String;longOption;Option
+String;option;Option
+boolean;optionalArg;Option
+boolean;required;Option
+String;longOption;OptionBuilder
+String;description;OptionBuilder
+String;argName;OptionBuilder
+boolean;required;OptionBuilder
+int;argCount = Option.UNINITIALIZED;OptionBuilder
+Class<?>;type;OptionBuilder
+boolean;optionalArg;OptionBuilder
+char;valueSeparator;OptionBuilder
+OptionBuilder;INSTANCE = new OptionBuilder();OptionBuilder
+long;serialVersionUID = 1L;OptionGroup
+Map<String, Option>;optionMap = new LinkedHashMap<>();OptionGroup
+boolean;required;OptionGroup
+long;serialVersionUID = 1L;Options
+Map<String, Option>;shortOpts = new LinkedHashMap<>();Options
+Map<String, Option>;longOpts = new LinkedHashMap<>();Options
+List<Object>;requiredOpts = new ArrayList<>();Options
+long;serialVersionUID = 9112808380089253192L;ParseException
+Converter<?, UnsupportedOperationException>;UNSUPPORTED = s -> {
+    throw new UnsupportedOperationException("Not yet implemented");
+};PatternOptionBuilder
+List<String>;tokens = new ArrayList<>();PosixParser
+boolean;eatTheRest;PosixParser
+Option;currentOption;PosixParser
+Options;options;PosixParser
+int;HEX_RADIX = 16;TypeHandler
+Map<Class<?>, Converter<?, ? extends Throwable>>;converterMap;TypeHandler
+long;serialVersionUID = -252504690284625623L;UnrecognizedOptionException
+Options;options;ArgumentIsOptionTest
+CommandLineParser;parser;ArgumentIsOptionTest
+Options;options;BugCLI148Test
+String;CR = System.lineSeparator();BugCLI162Test
+String;OPT = "-";BugCLI162Test
+String;OPT_COLUMN_NAMES = "l";BugCLI162Test
+String;OPT_CONNECTION = "c";BugCLI162Test
+String;OPT_DESCRIPTION = "e";BugCLI162Test
+String;OPT_DRIVER = "d";BugCLI162Test
+String;OPT_DRIVER_INFO = "n";BugCLI162Test
+String;OPT_FILE_BINDING = "b";BugCLI162Test
+String;OPT_FILE_JDBC = "j";BugCLI162Test
+String;OPT_FILE_SFMD = "f";BugCLI162Test
+String;OPT_HELP = "h";BugCLI162Test
+String;OPT_HELP_LONG = "help";BugCLI162Test
+String;OPT_INTERACTIVE = "i";BugCLI162Test
+String;OPT_JDBC_TO_SFMD = "2";BugCLI162Test
+String;OPT_JDBC_TO_SFMD_L = "jdbc2sfmd";BugCLI162Test
+String;OPT_METADATA = "m";BugCLI162Test
+String;OPT_PARAM_MODES_INT = "o";BugCLI162Test
+String;OPT_PARAM_MODES_NAME = "O";BugCLI162Test
+String;OPT_PARAM_NAMES = "a";BugCLI162Test
+String;OPT_PARAM_TYPES_INT = "y";BugCLI162Test
+String;OPT_PARAM_TYPES_NAME = "Y";BugCLI162Test
+String;OPT_PASSWORD = "p";BugCLI162Test
+String;OPT_PASSWORD_L = "password";BugCLI162Test
+String;OPT_SQL = "s";BugCLI162Test
+String;OPT_SQL_L = "sql";BugCLI162Test
+String;OPT_STACK_TRACE = "t";BugCLI162Test
+String;OPT_TIMING = "g";BugCLI162Test
+String;OPT_TRIM_L = "trim";BugCLI162Test
+String;OPT_USER = "u";BugCLI162Test
+String;OPT_WRITE_TO_FILE = "w";BugCLI162Test
+String;PMODE_IN = "IN";BugCLI162Test
+String;PMODE_INOUT = "INOUT";BugCLI162Test
+String;PMODE_OUT = "OUT";BugCLI162Test
+String;PMODE_UNK = "Unknown";BugCLI162Test
+String;PMODES = PMODE_IN + ", " + PMODE_INOUT + ", " + PMODE_OUT + ", " + PMODE_UNK;BugCLI162Test
+String;EXPECTED = "usage: org.apache.commons.cli.bug.BugCLI162Test" + CR + " -2,--jdbc2sfmd <arg>        Converts the JDBC file in the first argument" + CR + "                             to an SMFD file specified in the second" + CR + "                             argument." + CR + " -a,--paramNames <arg>       Parameter XML names; default names are" + CR + "                             param1, param2, etc. Example: -a \"pname1" + CR + "                             pname2\"" + CR + " -b,--jdbc <arg>             Writes a JDBC binding node file for the given" + CR + "                             SQL" + CR + " -c,--url <arg>              Connection URL" + CR + " -d,--driver <arg>           JDBC driver class name" + CR + " -e,--description <arg>      SFMD description. A default description is" + CR + "                             used if omited. Example: -e \"Runs such and" + CR + "                             such\"" + CR + " -f,--sfmd <arg>             Writes a SFMD file for the given SQL" + CR + " -g,--printTiming            Prints timing information" + CR + " -h,--help                   Prints help and quits" + CR + " -i,--interactive            Runs in interactive mode, reading and writing" + CR + "                             from the console, 'go' or '/' sends a" + CR + "                             statement" + CR + " -j,--node <arg>             Writes a JDBC node file for the given SQL" + CR + "                             (internal debugging)" + CR + " -l,--columnNames <arg>      Column XML names; default names column" + CR + "                             labels. Example: -l \"cname1 cname2\"" + CR + " -m,--printMetaData          Prints metadata information" + CR + " -n,--info                   Prints driver information and properties. If" + CR + "                             -c is not specified, all drivers on the" + CR + "                             classpath are displayed." + CR + " -o,--paramModes <arg>       Parameters modes (1=IN, 2=INOUT, 4=OUT," + CR + "                             0=Unknown). -o and -O are mutually exclusive." + CR + "                             Example for 2 parameters, OUT and IN: -o \"4" + CR + "                             1\"" + CR + " -O,--paramModeNames <arg>   Parameters mode names (IN, INOUT, OUT," + CR + "                             Unknown). -o and -O are mutually exclusive." + CR + "                             Example for 2 parameters, OUT and IN: -O \"OUT" + CR + "                             IN\"" + CR + " -p,--password <arg>         The database password for the user specified" + CR + "                             with the -u option. You can obfuscate the" + CR + "                             password with" + CR + "                             org.mortbay.jetty.security.Password, see" + CR + "                             https://docs.codehaus.org/display/JETTY/Secur" + CR + "                             ing+Passwords" + CR + " -s,--sql <arg>              Runs SQL or {call stored_procedure(?, ?)} or" + CR + "                             {?=call function(?, ?)}" + CR + " -t,--printStack             Prints stack traces on errors" + CR + "    --trim <arg>             Trims leading and trailing spaces from all" + CR + "                             column values. Column XML names can be" + CR + "                             optionally specified to set which columns to" + CR + "                             trim." + CR + " -u,--user <arg>             A database user name" + CR + " -w,--outfile <arg>          Writes the SQL output to the given file" + CR + " -y,--paramTypes <arg>       Parameter types from java.sql.Types. -y and" + CR + "                             -Y are mutually exclusive. Example: -y \"-10" + CR + "                             12\"" + CR + " -Y,--paramTypeNames <arg>   Parameter java.sql.Types names. -y and -Y are" + CR + "                             mutually exclusive. Example: -Y \"CURSOR" + CR + "                             VARCHAR\"" + CR;BugCLI162Test
+HelpFormatter;formatter;BugCLI162Test
+StringWriter;sw;BugCLI162Test
+DefaultParser;parser;BugCLI265Test
+Options;options;BugCLI265Test
+List<String>;insertedOrder = Arrays.asList("h", "d", "f", "x", "s", "p", "t", "w", "o");BugCLI266Test
+List<String>;sortOrder = Arrays.asList("d", "f", "h", "o", "p", "s", "t", "w", "x");BugCLI266Test
+Options;options;BugCLI71Test
+CommandLineParser;parser;BugCLI71Test
+String;EOL = System.lineSeparator();HelpFormatterTest
+Options;options;OptionGroupTest
+Parser;parser = new PosixParser();OptionGroupTest
+String;LETTERS = "a\u00D1";OptionValidatorTest
+String;DIGITS = "1\u0661\u06f2\u0968\uFF14";OptionValidatorTest
+String;CURRENCY = "€$";OptionValidatorTest
+String;PUNCTUATION = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";OptionValidatorTest
+String;COMBINING_MARK = "\u0303";OptionValidatorTest
+String;NON_SPACING_MARK = "\u0CBF";OptionValidatorTest
+String;IDENTIFIER_IGNORABLE = "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\u0008";OptionValidatorTest
+String;acceptablePunctuation;OptionValidatorTest
+String;notAcceptablePunctuation;OptionValidatorTest
+String;additionalOptonChars;OptionValidatorTest
+String;additionalLongChars;OptionValidatorTest
+String;firstChars;OptionValidatorTest
+String;notFirstChars;OptionValidatorTest
+String;restChars;OptionValidatorTest
+String;notRestChars;OptionValidatorTest
+Converter<Path, InvalidPathException>;PATH_CONVERTER = s -> Paths.get("foo");TypeHandlerTest
+CommandLine;cmd;ValuesTest
+Option;NULL_OPTION = null;ValueTest
+String;NULL_STRING = null;ValueTest
+Options;opts = new Options();ValueTest
+CommandLine;cl;ValueTest
