@@ -11,8 +11,8 @@ import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.statistics.HistogramDataset;
 
-public class Main {
-
+public class CCcalc {
+/*
     public static void main(String[] args) throws IOException {
         if (args.length == 0) {
             System.err.println("Veuillez fournir le chemin du code source");
@@ -26,27 +26,26 @@ public class Main {
         }
 
         SourceRoot root = new SourceRoot(file.toPath());
-        CyclomaticComplexityVisitor visitor = new CyclomaticComplexityVisitor();
+        Ex5Visitor visitor = new Ex5Visitor();
 
         root.parse("", (localPath, absolutePath, result) -> {
             result.ifSuccessful(unit -> unit.accept(visitor, null));
             return SourceRoot.Callback.Result.DONT_SAVE;
         });
-
         generateReport(visitor.getMethodComplexityMap());
         generateHistogram(visitor.getMethodComplexityMap());
     }
 
-    private static void generateReport(Map<String, CyclomaticComplexityVisitor.MethodInfo> methodComplexityMap) throws IOException {
+    private static void generateReport(Map<String, Ex5Visitor.MethodInfo> methodComplexityMap) throws IOException {
         try (FileWriter writer = new FileWriter("cyclomatic_complexity_report.csv")) {
             writer.write("Class.Method,Parameter Types,CC\n");
-            for (CyclomaticComplexityVisitor.MethodInfo info : methodComplexityMap.values()) {
+            for (Ex5Visitor.MethodInfo info : methodComplexityMap.values()) {
                 writer.write(info.className + "." + info.methodName + "," + info.parameterTypes + "," + info.cyclomaticComplexity + "\n");
             }
         }
     }
 
-    private static void generateHistogram(Map<String, CyclomaticComplexityVisitor.MethodInfo> methodComplexityMap) throws IOException {
+    private static void generateHistogram(Map<String, Ex5Visitor.MethodInfo> methodComplexityMap) throws IOException {
         HistogramDataset dataset = new HistogramDataset();
         double[] ccValues = methodComplexityMap.values().stream()
             .mapToDouble(info -> info.cyclomaticComplexity)
@@ -62,5 +61,25 @@ public class Main {
         );
 
         ChartUtils.saveChartAsPNG(new File("cc_histogram.png"), histogram, 800, 600);
+    }*/
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0) {
+            System.err.println("Should provide the path to the source code");
+            System.exit(1);
+        }
+
+        File file = new File(args[0]);
+        if(!file.exists() || !file.isDirectory() || !file.canRead()) {
+            System.err.println("Provide a path to an existing readable directory");
+            System.exit(2);
+        }
+
+        SourceRoot root = new SourceRoot(file.toPath());
+        Ex5Visitor printer = new Ex5Visitor();
+        
+        root.parse("", (localPath, absolutePath, result) -> {
+            result.ifSuccessful(unit -> unit.accept(printer, null));
+            return SourceRoot.Callback.Result.DONT_SAVE;
+        });
     }
 }

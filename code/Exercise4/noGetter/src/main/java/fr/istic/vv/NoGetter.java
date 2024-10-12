@@ -28,13 +28,11 @@ public class NoGetter {
         }
 
         SourceRoot root = new SourceRoot(file.toPath());
-        Visitor printer = new Visitor();
+        Ex4Visitor printer = new Ex4Visitor();
         
         root.parse("", (localPath, absolutePath, result) -> {
             result.ifSuccessful(unit -> unit.accept(printer, null));
             return SourceRoot.Callback.Result.DONT_SAVE;
         });
     }
-
-
 }

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.istic.vv</groupId>
-    <artifactId>javaparser-starter</artifactId>
+    <artifactId>exercice5</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -39,7 +39,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>fr.istic.vv.Main</mainClass>
+                            <mainClass>fr.istic.vv.CCcalc</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -52,7 +52,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>fr.istic.vv.Main</mainClass>
+                            <mainClass>fr.istic.vv.CCcalc</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
