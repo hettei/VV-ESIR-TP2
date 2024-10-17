@@ -1,0 +1,6 @@
+vscode/
+*.class
+target
+
+cc_histogram.png
+cyclomatic_complexity_report.csv

@@ -26,6 +26,14 @@ public class TightClassCohesion extends VoidVisitorWithDefaults<Void> {
         int max_edge_count = method_count * (method_count - 1) / 2;
         int direct_edge_count = 0;
 
+        if (max_edge_count == 0) {
+            System.out.println(String.format(
+                "CLASS %s: no methods, skipping...",
+                decl.getName().toString()
+            ));
+            return; 
+        }
+
         // list of lists of used fields per method
         ArrayList<ArrayList<String>> used_fields =
             new ArrayList<ArrayList<String>>();
@@ -47,12 +55,13 @@ public class TightClassCohesion extends VoidVisitorWithDefaults<Void> {
         {
             for (int j = i + 1; j < method_count; j++) 
             {
-                // ArrayList<ArrayList<String>> used_fields2 = 
-                //     new ArrayList<ArrayList<String>>(used_fields);
-
+                ArrayList<ArrayList<String>> used_fields2 = 
+                    new ArrayList<ArrayList<String>>(used_fields);
+                
+                direct_edge_count++;
                 // delete non-matching elements
-                used_fields.get(i).retainAll(used_fields.get(j));
-                if (!used_fields.get(i).isEmpty()) {
+                used_fields2.get(i).retainAll(used_fields.get(j));
+                if (!used_fields2.get(i).isEmpty()) {
                     direct_edge_count++;
                 }
             }
@@ -63,6 +72,7 @@ public class TightClassCohesion extends VoidVisitorWithDefaults<Void> {
             decl.getName().toString(),
             (float) direct_edge_count / max_edge_count
         ));
+
         // decl.accept(this, null);
     }
 
