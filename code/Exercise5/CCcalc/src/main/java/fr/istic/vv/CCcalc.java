@@ -3,6 +3,7 @@ package fr.istic.vv;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Map;
 
 import com.github.javaparser.utils.SourceRoot;
@@ -13,38 +14,6 @@ import org.jfree.data.statistics.HistogramDataset;
 
 public class CCcalc {
 /*
-    public static void main(String[] args) throws IOException {
-        if (args.length == 0) {
-            System.err.println("Veuillez fournir le chemin du code source");
-            System.exit(1);
-        }
-
-        File file = new File(args[0]);
-        if (!file.exists() || !file.isDirectory() || !file.canRead()) {
-            System.err.println("Veuillez fournir un chemin vers un répertoire existant et lisible");
-            System.exit(2);
-        }
-
-        SourceRoot root = new SourceRoot(file.toPath());
-        Ex5Visitor visitor = new Ex5Visitor();
-
-        root.parse("", (localPath, absolutePath, result) -> {
-            result.ifSuccessful(unit -> unit.accept(visitor, null));
-            return SourceRoot.Callback.Result.DONT_SAVE;
-        });
-        generateReport(visitor.getMethodComplexityMap());
-        generateHistogram(visitor.getMethodComplexityMap());
-    }
-
-    private static void generateReport(Map<String, Ex5Visitor.MethodInfo> methodComplexityMap) throws IOException {
-        try (FileWriter writer = new FileWriter("cyclomatic_complexity_report.csv")) {
-            writer.write("Class.Method,Parameter Types,CC\n");
-            for (Ex5Visitor.MethodInfo info : methodComplexityMap.values()) {
-                writer.write(info.className + "." + info.methodName + "," + info.parameterTypes + "," + info.cyclomaticComplexity + "\n");
-            }
-        }
-    }
-
     private static void generateHistogram(Map<String, Ex5Visitor.MethodInfo> methodComplexityMap) throws IOException {
         HistogramDataset dataset = new HistogramDataset();
         double[] ccValues = methodComplexityMap.values().stream()
@@ -62,6 +31,7 @@ public class CCcalc {
 
         ChartUtils.saveChartAsPNG(new File("cc_histogram.png"), histogram, 800, 600);
     }*/
+    private static PrintWriter csvWriter;
     public static void main(String[] args) throws IOException {
         if(args.length == 0) {
             System.err.println("Should provide the path to the source code");
@@ -75,11 +45,22 @@ public class CCcalc {
         }
 
         SourceRoot root = new SourceRoot(file.toPath());
-        Ex5Visitor printer = new Ex5Visitor();
-        
-        root.parse("", (localPath, absolutePath, result) -> {
-            result.ifSuccessful(unit -> unit.accept(printer, null));
-            return SourceRoot.Callback.Result.DONT_SAVE;
-        });
+        try{
+            csvWriter = new PrintWriter(new FileWriter("cc_report_"+file.getName()+".csv"));
+            csvWriter.println("Class;Method;CC");
+            Ex5Visitor printer = new Ex5Visitor();
+            
+            root.parse("", (localPath, absolutePath, result) -> {
+                result.ifSuccessful(unit -> unit.accept(printer, null));
+                return SourceRoot.Callback.Result.DONT_SAVE;
+            }); 
+            csvWriter.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static PrintWriter getPrintWriter(){
+        return csvWriter;
     }
 }
